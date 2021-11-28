@@ -1,14 +1,17 @@
 fun main() {//Главная функция
-    Task1() // Зовем побочную функцию
+    For_Test() // Зовем побочную функцию
 }
 
 fun WhenTest() {
-    var variants = readLine()!!.toInt()
-    when (variants) {
-        1 -> println("Привет!")
-        2 -> println("Пока!")
-        3 -> println("Как дела?")
-        else -> println("Иди сюда!")
+    for(schetchik in 1..4)
+        {
+        var variants = readLine()!!.toInt()
+        when (variants) {
+            1 -> println("Привет!")
+            2 -> println("Пока!")
+            3 -> println("Как дела?")
+            else -> println("Иди сюда!")
+        }
     }
 }
 
@@ -18,7 +21,6 @@ fun Task1() {
                 "которая в зависимсоти от погоды\n" +
                 "дает совет что лучше делать.\n"
     )
-
     print(
         "1 - снег,\n" +
                 "2 - дождь,\n" +
@@ -55,5 +57,16 @@ when(Weatherman) {
 
 }
 
+fun For_Test()
+{
+    print("Введите начало: ")
+    var start = readLine()!!.toInt()
+    print("Введите конец: ")
+    var finish = readLine()!!.toInt()
+    for(num in start..finish)
+    {
+        println(num)
+    }
+}
 
 
