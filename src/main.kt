@@ -1,5 +1,5 @@
 fun main() {//Главная функция
-    Numbers999999() // Зовем побочную функцию
+    new_year()    // Зовем побочную функцию
 }
 
 fun WhenTest() {
@@ -41,7 +41,6 @@ fun Task1() {
 
 }
 
-
 fun Numbers999999() {
     print(
         "Case18." +
@@ -77,9 +76,8 @@ fun Numbers999999() {
             //десятки тысячи
             when (numbers % 100000 / 10000) {
 
-                1 ->
-                {
-                    when(numbers%100000/1000%10){
+                1 -> {
+                    when (numbers % 100000 / 1000 % 10) {
                         0 -> string_description += "десять "
                         1 -> string_description += "одинадцать "
                         2 -> string_description += "двенадцать "
@@ -106,14 +104,11 @@ fun Numbers999999() {
             }
 
             //тысячи
-            if (numbers%100000/1000 in 10..19)
-            {
+            if (numbers % 100000 / 1000 in 10..19) {
 
-            }
-            else
-            {
+            } else {
                 when (numbers % 10000 / 1000) {
-                    0->  string_description += "тысяч "
+                    0 -> string_description += "тысяч "
                     1 -> string_description += "одна тысяча "
                     2 -> string_description += "две тысячи "
                     3 -> string_description += "три тысячи "
@@ -166,9 +161,8 @@ fun Numbers999999() {
                 9 -> string_description += "девяносто "
             }
             //единицы
-            if (numbers%100 in 10..19) {
-            }
-            else {
+            if (numbers % 100 in 10..19) {
+            } else {
                 when (numbers % 10) {
                     1 -> string_description += "один"
                     2 -> string_description += "два"
@@ -185,5 +179,34 @@ fun Numbers999999() {
             print("А условие кто читать будет? А?")
         }
         println(string_description)
+    }
+}
+
+
+fun new_year() {
+//    print("Введите ваш бюджет на подарок: ")
+//    var budget = readLine()!!.toInt()
+
+
+    val num = mutableMapOf(
+        1 to "один",
+        2 to "два",
+        3 to "три",
+        4 to "четыре",
+        5 to "пять",
+        6 to "шесть",
+        7 to "семь",
+        8 to "восемь",
+        9 to "девять",
+        10 to "десять",
+    )
+while(true)
+    {
+
+        print("Выберите номер элемента, который вы хотите отредактировать[1-10]: ")
+        var element_number = readLine()!!.toInt()
+        print("Редактирование: ")
+        num[element_number] = readLine().toString()
+        println(num)
     }
 }
